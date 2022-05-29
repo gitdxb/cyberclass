@@ -1,0 +1,115 @@
+<!-- ! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  
+    <!--? B1: phân tích các thành phần chính của layout -->
+    <!-- 5 thành phần chính -->
+    <!-- div: phân chia bố cục các thành phần UI -->
+    <div id="header" class="header">
+        <a href="#">
+            <img src="./img/logoicon.png" alt="logo">
+        </a>
+        <!-- navigation bar/menu/navbar (thanh dieu huong nguoi dung) -->
+        <!-- <ul>
+            <li>
+                <a href="">Home</a>
+            </li>
+        </ul> -->
+    
+        <!-- ul>li*6>a -->
+        <!-- Alt + click chuot: đa con trỏ -->
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    
+    </div>
+    <!-- carousel/ slider/banner -->
+    <div class="carousel"></div>
+    <!-- .activies -->
+    <div class="activies">
+        <!-- class="title": nếu code css áp dụng chung thì đặt tên class gọn để tiện dùng chung -->
+        <!-- BEM: 
+        thể hiện quan hệ cha con của các thẻ: tenthẻchachính__tênrieng -->
+        <!-- btn-light: snake case -->
+        <div class="activies__title">
+            <img class="activies__img" src="./img/bonfire.png" alt="">
+            <h2>Activies</h2>
+        </div>
+        <div class="activies__content">
+            <!-- activies__item: thêm khoảng cách -->
+            <div class="activies__item">
+                <!-- activies__background: thêm màu nền -->
+                <div class="activies__background">
+                    <div class="activies__image">
+                        <img src="./img/product1.png" alt="">
+                        
+                        <a href="#" class="activies__icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                       
+                    </div>
+                    <div class="activies__info">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, vero!</p>
+                        <button>read more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="activies__item">
+                <!-- activies__background: thêm màu nền -->
+                <div class="activies__background">
+                    <div class="activies__image">
+                        <img src="./img/product1.png" alt="">
+                    </div>
+                    <div class="activies__info">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, vero!</p>
+                        <button>read more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="activies__item">
+                <!-- activies__background: thêm màu nền -->
+                <div class="activies__background">
+                    <div class="activies__image">
+                        <img src="./img/product1.png" alt="">
+                    </div>
+                    <div class="activies__info">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, vero!</p>
+                        <button>read more</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- clear float (xóa các ảnh hưởng float) -->
+            <div class="clear"></div>
+        </div>
+        <div class="activies__viewAll">
+            <button>View All</button>
+        </div>
+
+    </div>
+    <div class="contact"></div>
+    <div class="footer"></div>
+</body>
+</html>

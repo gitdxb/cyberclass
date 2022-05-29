@@ -1,0 +1,106 @@
+
+
+/* Global: dùng chung cho toàn bộ web */
+
+/*? dấu * : chọn tất cả thẻ HTML  */
+*{
+    /* reset margin, padding mặc định của duyệt  */
+    margin: 0;
+    padding: 0;
+
+    /* giữ nguyên kích thước width của thẻ khi thêm padding */
+    box-sizing: border-box;
+}
+
+body{
+    background: #faf4f2;
+}
+
+.clear{
+    clear: both;
+}
+
+
+
+/* ul (ảnh hưởng cả hệ thống web) */
+
+/* HEADER */
+
+.header{
+    /* tên màu (white,black..),hex (#), rgb(0,0,0) */
+    background:#f8e1d2;
+        /* t,b     r,l */
+    padding: 10px 35px;
+}
+
+/* Chỉ áp dụng cho ul của header */
+.header ul{
+    /*B1: xóa dấu tròn đen */
+    list-style: none;
+}
+
+.header a{
+    /* B2: xóa dấu gạch chân thả a */
+    text-decoration: none;
+    color: black;
+}
+
+.header li {
+    /* B3: Chuyển li từ block sang inline => các li nằm chung 1 hàng */
+    display: inline;
+    /*? Box model: cách thể hiện của trình duyệt đối với thẻ html, giúp phân biệt các vùng(margin,padding,border,content) trong phạm vi của thẻ */
+    /*? Phạm vi của 1 thẻ sẽ từ border trở vào */
+    /*? Khoảng cách từ thẻ này tới thẻ kế bên */
+    margin:10px;
+    /*? Khoảng cách từ content đến border của thẻ */
+    /* padding: 15px; */
+    /* border:3px solid red; */
+}
+
+
+/* CAROUSEL */
+.carousel{
+    background-image: url(../img/BG.png);
+    /* do thẻ carousel đang bị thiếu height trên trình duyêt => cần thêm chiều cao */
+    height: 700px;
+    /* chỉnh kích thước của hình nền: phủ hết khung của thẻ carousel */
+    background-size: cover;
+    /*vị trí ưu tiên hiển thị của hình nền, mặc định: top,left */
+    background-position: center;
+}
+
+
+/* display: inline chỉ áp dụng cho nội dung đơn giản (chứ 1 con 1 dòng chữ ngắn) */
+/* float: giúp sắp xếp các khối nội dung, hỗ trợ cho tất các trình duyệt và mọi phiên bản */
+
+/* thẻ nào cần sắp xếp thì gọi thẻ đó */
+/* kích thước tối đa của của trình duyêt là width 100% */
+/* width: 100% , nếu tràn thì trình duyệt sẽ làm rớt hàng các sản phẩm 
+    item (width)= content + padding + border
+    (content 25% + 20px ) x 4 > 100%
+    margin + vào width thẻ cha
+*/
+
+.activies__item{
+    float: left;
+    width:25%;
+    /* margin: 0 10px; */
+    padding:0 10px;
+    /* border: 1px solid red; */
+    /* nếu thẻ con chưa có thuộc tính css đó thì khi xét cho cha thẻ con sẽ được kế thừa (text-align, color, font) */
+    text-align: center;
+}
+
+.activies__background{
+    background: #fff;
+    /* border: 1px solid green; */
+    padding: 20px;
+    border-radius: 20px;
+}
+.activies__image img{
+    width: 100%;
+    border-radius: 20px;
+}
+.activies__info p{
+    margin: 15px 0;
+}

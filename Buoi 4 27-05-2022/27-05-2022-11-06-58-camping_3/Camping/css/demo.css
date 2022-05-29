@@ -1,0 +1,35 @@
+/* Selector */
+h1{
+    background-color: green;
+}
+/* Tag name */
+/* diểm: 1 */
+h2{
+    color: red;
+    background-color: red;
+}
+/* ID cao nhất */
+/* điểm: 100 */
+#idheading2{
+    font-size: 30px;
+    background-color: green;
+}
+
+/* Class */
+/* diểm: 10 */
+.heading2{
+    background-color: yellow;
+}
+
+
+/* C1: bằng điểm và code nằm dưới cùng */
+/* C2: điểm cao hơn (không quan tâm thứ tự) */
+
+/* 100 + 10 = 110 */
+#idheading2.heading2{
+    background-color: blueviolet;
+}
+/* 1 + 100 + 10 = 111 */
+body #idheading2.heading2{
+    background-color: pink;
+}

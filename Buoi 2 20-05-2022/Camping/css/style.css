@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* Giu nguyen kich thuoc width cua the khi them padding  */
+    box-sizing: border-box;
+}
+.clear {
+    clear: both;
+}
+body {
+    background: #faf4f2;
+}
+.header {
+    background: #f8e1d2;
+             /* t,b   r,l     */
+    padding: 10px 35px;
+}
+.header ul {
+    /* xoa dau tron den */
+    list-style: none;
+}
+.header a {
+    /*? xoa dau gach chan */
+    text-decoration: none;
+}
+.header li {
+    display: inline;
+    margin: 10px;
+    padding: 15px;
+    /* border: 3px solid red; */
+}
+
+.carousel {
+    background-image: url(../img/BG.png);
+    height: 700px;
+    /* chinh kich thuoc cua hinh nen: phu het khung cua the carousel */
+    background-size: cover;
+
+    /* vi tri uu tien hien thi cua hinh nen, mac dinh: top, left  */
+    background-position: center;
+}
+
+/* the nao can sap xep thi goi the do  */
+.activities__item {
+    float: left;
+    width: 25%;
+    /* margin:  0 10px; */
+    padding: 0 10px;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+.activities__background {
+    background: #fff;
+    /* border: 1px solid green; */
+    padding: 20px;
+    border-radius: 20px;
+}
+.activities__image img {
+    width: 100%;
+    border-radius: 20px;
+}
+.activities__info p {
+    margin: 15px 0;
+}
+.activities__image {
+    position: relative;
+}
+.activities__icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    /* opacity: 0.5; */
+    height: 80px;
+    width: 80px;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* the a la loai inline, khong xet duoc kich thuoc => chuyen the a tu inline sang block  */
+    display: block;
+
+    /*? Giup can giua icon theo chieu ngang, ky thuat can giua icon so voi vien border ben ngoai */
+    /* text-align: center; */
+
+    /*? Can giua theo chieu doc  */
+    /* Khoang cach giua cac dong chu khac nhau  */
+    line-height: 90px;
+    border-radius: 15px;
+
+}
+.activities__icon i {
+    color: #e76f51;
+    font-size: 30px;
+
+    /* The i do FA da tao display block 
+    height: 40px;
+    width: 40px;
+    background-color: yellow; */
+}
+.activities__info button {
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: 1px solid #e6e6e6;
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+.activities__info button:hover {
+    border-color:#e76f51;
+}
