@@ -175,3 +175,65 @@ header {
 .number__item p:last-of-type {
     font-size: 20px;
 }
+.number__item {
+    width: 25%;
+}
+.section {
+    padding: 100px 0;
+}
+.exp__content {
+    width: 75%;
+    margin: auto;
+}
+.exp__content video {
+    width: 100%;
+}
+.exp__content iframe {
+    width: 100%;
+    height: 500px;
+    border: 10px solid hotpink;
+}
+.exp {
+    background-image: url(../img/bussiness_img_1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* CONTACT  */
+.contact__content {
+    width: 75%;
+    margin: auto;
+    display: flex;
+}
+.contact__map {
+    width: 60%;
+}
+.contact__map iframe {
+    width: 100%;
+}
+.contact__form {
+    width: 40%;
+}
+.contact__form form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+.contact__form input, .contact__form button {
+    font-size: 15px;
+    padding: 1em;
+}
+
+/* focus  */
+.contact__form input {
+    border: 3px solid black;
+    transition: all .5s;
+}
+.contact__form input:focus {
+    outline: none;
+    border: 3px solid hotpink;
+    border-color: red;
+    box-shadow: 0px 0px 0px purple;
+}
