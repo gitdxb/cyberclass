@@ -70,7 +70,7 @@
         </div>
     </section>
     <!-- section.service  -->
-    <section class="services">
+    <section class="services section">
         <div class="title">
             <p>SERVICES WE ARE OFFERING</p>
             <h2>WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES</h2>
@@ -311,6 +311,21 @@
         $('.counter').countUp();
     </script>
 
+    <!-- SLICK  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.services__content').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots:true,
+        arrows: false
+        // autoplay: true,
+        // autoplaySpeed: 500
+    });
+    </script>
+
+    <!-- FANCY APP  -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 </body>
 

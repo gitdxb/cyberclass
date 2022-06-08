@@ -83,6 +83,22 @@ header {
     background-color: #d1919c;
     border: 1px solid #d1919c;
 }
+/* SERVICES  */
+.services__content {
+    width: 75%;
+    margin: auto;
+}
+.services {
+    background: #000;
+}
+.services__item {
+    width: 214px;
+    height: 230px;
+    background-color: #fff;
+    text-align: center;
+    margin: 0 5px;
+}
+
 .blog__content {
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -236,4 +252,11 @@ header {
     border: 3px solid hotpink;
     border-color: red;
     box-shadow: 0px 0px 0px purple;
+}
+.services__content .slick-dots li button:before {
+    font-size: 15px;
+    color: white;   
+}
+.slick-dots li.slick-active button:before {
+    color: red;
 }
