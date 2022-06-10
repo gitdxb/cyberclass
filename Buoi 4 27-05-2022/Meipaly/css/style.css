@@ -16,6 +16,24 @@ html, body{
     /* font-size: 18px; */
     font-family: 'Oswald', sans-serif;
 }
+.title {
+    text-align: center;
+}
+.title p:first-of-type {
+    color: #e62b4a;
+}
+.title h2 {
+    color: white;
+}
+.title p:last-of-type {
+    color: #888;
+}
+.title--black h2 {
+    color: #000;
+}
+.title--black p:first-of-type {
+    color: #888;
+}
 
 /* HEADER  */
 
@@ -30,7 +48,13 @@ html, body{
     align-items: center;
 }
 header {
-    background: #000;
+    /* background: #000; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.116);
 }
 .header__content li {
     list-style: none;
@@ -82,6 +106,14 @@ header {
 .carousel__content button:hover {
     background-color: #d1919c;
     border: 1px solid #d1919c;
+}
+.carousel__icon {
+    font-size: 3rem;
+    color: #e62b4a;
+
+    /* Animation, hieu ung chuyen dong cua mui ten tro xuong */
+    animation: upDown .5s linear 0s infinite;
+
 }
 /* SERVICES  */
 .services__content {
@@ -253,10 +285,87 @@ header {
     border-color: red;
     box-shadow: 0px 0px 0px purple;
 }
+
+/* Back To Top */
+.backToTop {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    background-color: #e62b4a;
+    color: white;
+    display: block;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    scroll-behavior: smooth;
+
+    opacity: 0;
+    visibility: hidden;
+
+}
+.cd-top--is-visible {
+    visibility: visible;
+    opacity: 1;
+}
 .services__content .slick-dots li button:before {
     font-size: 15px;
     color: white;   
 }
 .slick-dots li.slick-active button:before {
     color: red;
+}
+.services__content .services__item {
+    position: relative;
+    display: flex;
+    /* C2: Can giua theo flex nhieu the con  */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.services__item::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Quy dinh cua before va after, phai co conten moi hien thi tren UI  */
+    content: '';
+    height: 0;
+    width: 5px;
+    background-color: #e62b4a;
+    /* Before, after la inline, ko set dc kich thuoc, nen doi thanh block */
+    display: block;
+    transition: all .5s;
+}
+
+/* Sau hover  */
+.services__item:hover::before {
+    height: 100%;
+}
+
+/* Keyframe */
+/*! Keyframe: khai bao trang thai chuyen dong cua 1 chu ky  */
+/* from to */
+/* De khien cho mui ten chi xuong di chuyen */
+@keyframes upDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
+/* 0% -> 100%  */
+@keyframes upDownZoom {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(25px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(100px) rotate(360deg);
+    }
 }
