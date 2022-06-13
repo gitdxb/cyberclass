@@ -7,3 +7,66 @@
 html, body {
     font-family: 'Hind', sans-serif;
 }
+/* HEADER  */
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+/* truoc hover  */
+#portNavbar .nav-link::after {
+    content: '';
+    width: 0;
+    height: 5px;
+    background: #35a22c;
+    display: block;
+
+    transition: all .5s;
+}
+/* sau hover  */
+#portNavbar .nav-link:hover::after {
+    width: 100%;
+}
+#portNavbar .active .nav-link::after {
+    width: 100%;
+}
+
+/* CAROUSEL  */
+/*  B1: chinh kich thuoc avatar
+    B2: chinh chieu cao anh nen (height)
+    B3: chinh vi tri noi dung caption, o chinh giua
+    B4: chinh hinh dang cua indicator
+*/
+
+/* B1  */
+.portAvatar {
+    width: 140px;
+    border-radius: 50%;
+}
+
+/* B2  */
+#portCarouselID .carousel-item {
+    height: 100vh;
+}
+#portCarouselID .carousel-item>img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+/* B3  */
+/* BS da co khai bao position absolute, can phai can giua voi position absolute */
+#portCarouselID .carousel-caption {
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Chieu doc va chieu ngang keo nguoc lai*/
+}
+#portCarouselID .carousel-indicators li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+#portCarouselID .carousel-indicators li.active {
+    background-color: #35a22c;
+}
