@@ -70,3 +70,34 @@ header {
 #portCarouselID .carousel-indicators li.active {
     background-color: #35a22c;
 }
+
+/*Project*/
+.project__content .nav {
+    justify-content: center;
+}
+
+/* AWARD  */
+.award {
+    padding: 100px 0;
+    position: relative;
+}
+.award__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/memphis_3.png);
+    background-position: bottom left;
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+.award__left {
+    box-shadow: 0 0 30px 0 rgb(0,0,0,0.3);
+    background-color: rgba(red, green, blue, 0.25);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+}
