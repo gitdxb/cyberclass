@@ -101,3 +101,21 @@ header {
     border-radius: 20px;
     backdrop-filter: blur(3px);
 }
+
+/* RESPONSIVE  */
+@media  screen and (max-width: 992px) {
+
+    /* HEADER  */
+    header .navbar-toggler {
+        background-color: #35a22c;
+    }
+    header .navbar-nav {
+        background-color: white;
+    }
+    #portNavbar a {
+        color: #35a22c;
+        transition: all .5s;
+    }
+    /* CAROUSEL  */
+
+}
