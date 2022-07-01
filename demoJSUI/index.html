@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BS 4.6.1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- Style css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Demo JS UI</title>
+</head>
+<body>
+    <div class="container">
+        <div class="w-50 py-5">
+            <h2>Lay thong tin dang nhap</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" value="KH001">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" value="12345">
+                </div>
+
+            </form>
+        </div>
+        <div class="w-50 py-5">
+            <h2>Doi noi dung khi click button</h2>
+            <p class="alert alert-danger">
+                + Cach de tao va su dung ham (function) co ban
+                <br>
+                + Gan su kien(event) click vao 1 the html (button)
+            </p>
+            <p class="alert alert-info" id="txtChangeContent">Noi dung chua doi</p>
+            <button id="btnTest" onclick="showInfo()">test fucntion</button>
+            <button id="btnChange" class="btn btn-success">Click me!</button>
+        </div>
+    </div>
+    <div class="w-50 py-5">
+        <h2>Demo Tat den</h2>
+        <img id="imgBul" src="./img/pic_buloff.gif" alt="">
+        <button id="btnOn" class="btn btn-warning">On</button>
+        <button id="btnOff" class="btn btn-info">Off</button>
+    </div>
+
+
+    <!-- BS 4.6.1 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
