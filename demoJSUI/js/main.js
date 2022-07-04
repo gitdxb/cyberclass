@@ -1,3 +1,4 @@
+console.log("activated");
 var userELE = document.getElementById("username");
 console.log(userELE);
 
@@ -80,3 +81,14 @@ function turnOff() {
     document.getElementById("imgBul").src="./img/pic_buloff.gif";
 }
 document.getElementById("btnOff").onclick = turnOff;
+
+
+/**
+ * Demo thêm disabled (control form, thẻ a, button)
+ */
+function addDisabled() {
+    document.getElementById("txtDisabled").disabled = false;
+    document.getElementById("btnTimeline").disabled = false;
+}
+
+document.getElementById("btnClick").onclick = addDisabled;
