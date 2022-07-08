@@ -144,3 +144,43 @@ if(0 < soLuong && soLuong < 50) {
     alert("Sai rồi! Nhập lại đi!");
 }
 console.log("Tong tien: " + tienThanhToan);
+
+// rút gọn
+// câu lệnh gọn hơn
+// nhưng khó đọc code
+
+var age = 20;
+
+if(age >= 21) {
+    console.log("tuoi hop le");
+} else {
+    console.log("tuoi ko hop le");
+}
+// rút gọn: trong lệnh if chỉ có 1 dòng lệnh (code)  => bỏ dấu {}
+if(age >= 21)
+    console.log("tuoi hop le");
+else
+    console.log("tuoi ko hop le");
+
+// toán tử 3 ngôi
+age >= 21 ? console.log("tuoi hop le") : console.log("tuoi khong hop le");
+
+var loaiXe = "Honda";
+// if (loaiXe == "Honda") {
+//     console.log("Honda");
+// } else {
+//     console.log("Loai xe chua xac dinh");
+// }
+
+// C2
+switch (loaiXe) {
+    case "Honda":
+        console.log("Honda")
+        break; // lệnh dừng khi thoả mãn điều kiện
+    case "yamaha":
+        console.log("Yamaha")
+        break;
+    default:
+        console.log("Loai xe chua xac dinh")
+        break;
+}
