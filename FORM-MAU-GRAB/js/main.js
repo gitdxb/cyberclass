@@ -85,9 +85,11 @@ function tinhThanhTien() {
             } else if (1 < soKM && soKM <= 19) {
                 console.log("Gia 1-19")
                 thanhTien = DAU_TIEN_SUV + (soKM - 1) * KM1_19_SUV;
+                console.log("Thanh tien " + thanhTien);
             } else if (soKM > 19) {
                 console.log("Gia tren 19")
                 thanhTien = DAU_TIEN_SUV + 18 * KM1_19_SUV + (soKM - 19) * KM_TREN19_SUV;
+                console.log("Thanh tien " + thanhTien);
             } else {
                 alert("Nhap KM di!");
             }
@@ -98,12 +100,15 @@ function tinhThanhTien() {
             if (0 < soKM && soKM <= 1) {
                 console.log("Gia dau");
                 thanhTien = soKM * DAU_TIEN_BLACK;
+                console.log("Thanh tien " + thanhTien);
             } else if (1 < soKM && soKM <= 19) {
                 console.log("Gia 1-19")
                 thanhTien = DAU_TIEN_BLACK + (soKM - 1) * KM1_19_BLACK;
+                console.log("Thanh tien " + thanhTien);
             } else if (soKM > 19) {
                 console.log("Gia tren 19")
                 thanhTien = DAU_TIEN_BLACK + 18 * KM1_19_BLACK + (soKM - 19) * KM_TREN19_BLACK;
+                console.log("Thanh tien " + thanhTien);
             } else {
                 alert("Nhap KM di!");
             }
