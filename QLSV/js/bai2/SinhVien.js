@@ -17,6 +17,6 @@ function SinhVien(maSV, tenSV, email, password, ngaySinh, khoaHoc, toan, ly, hoa
 
     //phương thức
     this.tinhDTB = function() {
-        this.dtb (this.toan + this.ly + this.hoa)/3;
+        this.dtb = (this.toan + this.ly + this.hoa)/3;
     }
 }
