@@ -46,9 +46,32 @@ function themSinhVien() {
     var toan = getELE('txtDiemToan').value;
     var ly = getELE('txtDiemLy').value;
     var hoa = getELE('txtDiemHoa').value;
-    console.log(maSV, tenSV, email, password, ngaySinh, khoaHoc, toan, ly, hoa);
+    //console.log(maSV, tenSV, email, password, ngaySinh, khoaHoc, toan, ly, hoa);
 
-    // tạo thể hiện của SinhVien
+    var isValid = true;
+    // Các bước kiểm tra dữ liệu
+    /**
+     * Issue: tên sv có value, mã sv ko có value => vẫn cho thêm sinh viên
+     * Expected: chỉ được thêm sv khi tất cả các dữ liệu đều hợp lệ
+     * Nếu có 1 dữ liệu không hợp lệ => thông báo + ko được thêm sv
+     * Root cause: do dấu = (gán) => chỉ giữ lại kt kết quả cuối cùng, các kết quả trước ghi đè mất
+     * 
+     * Solution:
+     * C1: && => checkMa && checkTen => false && true => false => khó đọc khi chỉnh sửa
+     * C2: tách các bước kiểm tra => dễ đọc code
+     * &: tính toán binary , true 1, false 0
+     * => checkMa & checkTen => 0 & 1 => 0
+     * isValid(cuoi cùng) = isValid & checkEmpty
+     * => isValid(cuối cùng) &= checkEmpty
+     */
+    // Mã SV (kiểm tra rỗng, không được trùng)
+    isValid &= validation.checkEmpty(maSV,'spanMaSV', 'Mã sv không được để trống') && validation.checkID(maSV, 'spanMaSV', 'Mã SV ko được để trống');
+
+    // Tên SV (kiểm tra rỗng, kiểm tra ký tự chữ)
+    isValid &= validation.checkEmpty(tenSV, 'spanTenSV', 'Tên sv không được để trống');
+
+    if (isValid) {
+        // tạo thể hiện của SinhVien
     var sv = new SinhVien(maSV, tenSV, email, password, ngaySinh, khoaHoc, Number(toan), Number(ly), Number(hoa));
     sv.tinhDTB();
     console.log(sv);
@@ -61,6 +84,12 @@ function themSinhVien() {
     hienThiDS(dssv.mangSV);
 
     setLocalStorage();
+
+    // thêm sv thì reset form
+    resetForm();
+    }
+    
+    
 }
 
 /**
@@ -182,4 +211,12 @@ function capNhatSinhVien(params) {
     hienThiDS(dssv.mangSV);
     setLocalStorage();
 
+    resetForm();
+}
+
+function resetForm() {
+    // chỉ dùng với thẻ form => clear các giá trị
+    getELE('formQLSV').reset();
+
+    getELE('txtMaSV').disabled = false;
 }
