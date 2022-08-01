@@ -3,11 +3,10 @@
  * + Thêm SV (thêm phần tử mới cho mảng)
  * + Xóa, sửa
  */
-function DanhSachSinhVien() {
+function DanhSachSinhVien() {  
     // thuộc tính
     // mảng các đối tượng sinh viên
     this.mangSV = [];
-
     //phương thức
     // truyền tham số là đối tượng sv
     this.themSV = function(sv) {
@@ -45,4 +44,46 @@ function DanhSachSinhVien() {
             dssv.mangSV[viTri] = sv
         }
     }
+}
+
+/**
+ * Tìm kiếm theo tên
+ * Input: Từ khoá tìm kiếm (nguyen)
+ * 
+ * Các bước:
+ * tạo biến mảng chứa kết quả tìm thấy
+ * + mangTK[sv1, sv2...] => khai báo mặc định var mangTK=[]
+ * duyệt mảng
+ *      JS: phân biệt chữ hoa và thường của chuỗi string
+ *      => không nên dùng so sánh bằng (===)
+ *      TK: Nguyen => toLowcaseString() => nguyen
+ *      Tên: NGUYEN van b => toLowcaseString() => nguyen van b
+ * 
+ *      "nguyen" === "nguyen van b" => ko tìm thấy do JS so sánh cả 1 cụm chuỗi ký tự
+ *      => indexOf() => tìm trong tên SV có chứa từ khoá tìm kiếm không
+ *      => có chứa thì trả về vị trí tìm thấy
+ *      if tuKhoa === sv.tenSV
+ *            lưu sv tìm thấy vào mangTK
+ * 
+ * tra kết quả mảng ra khỏi hàm
+ * 
+ * Output: Các sinh viên có tên chứa từ khoá tìm kiếm
+ * (Nguyên Văn A, Tran Nguyen, Nguyen Van B)
+ */
+
+// Khai báo phương thức tìm kiếm
+// Prototype - ES5 => tạo thuộc tính và phương thức mà không cần chỉnh sửa lớp
+
+DanhSachSinhVien.prototype.timKiem = function(tuKhoa) {
+    var mangTK = [];
+    var tuKhoaThuong = tuKhoa.toLowerCase();
+    this.mangSV.map(function(sv){
+        var tenSVThuong = sv.tenSV.toLowerCase();
+        var viTriTK = tenSVThuong.indexOf(tuKhoaThuong);
+        if(viTriTK > -1) {
+            // tìm thấy
+            mangTK.push(sv);
+        }
+    });
+    return mangTK;
 }

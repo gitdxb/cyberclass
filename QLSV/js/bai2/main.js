@@ -84,32 +84,32 @@ function themSinhVien() {
   ) && validation.checkEmail(email, "spanEmailSV", "Email chưa đúng định dạng");
 
   // Password (kiểm tra rỗng, kiểm tra format)
-  isValid &= validation.checkEmpty(
-    password,
-    "spanMatKhau",
-    "Mật khẩu không được để trống"
-  ) && validation.checkEmail(password, "spanMatKhau", "Mật khẩu chưa đúng định dạng");
+  // isValid &= validation.checkEmpty(
+  //   password,
+  //   "spanMatKhau",
+  //   "Mật khẩu không được để trống"
+  // ) && validation.checkEmail(password, "spanMatKhau", "Mật khẩu chưa đúng định dạng");
 
     // Điểm Toán (kiểm tra rỗng và định dạng số, điểm  lớn hơn 0, nhỏ hơn 10)
     isValid &= validation.checkEmpty(
         toan,
         "spanToan",
         "Điểm không được để trống"
-      ) && validation.checkEmail(toan, "spanToan", "Điểm chưa đúng định dạng");
+      ) && validation.checkScore(toan, "spanToan", "Điểm chưa đúng định dạng");
 
     // Điểm Lý (kiểm tra rỗng và định dạng số, điểm  lớn hơn 0, nhỏ hơn 10)
     isValid &= validation.checkEmpty(
         ly,
         "spanLy",
         "Điểm không được để trống"
-      ) && validation.checkEmail(ly, "spanLy", "Điểm chưa đúng định dạng");
+      ) && validation.checkScore(ly, "spanLy", "Điểm chưa đúng định dạng");
 
     // Điểm Hoá (kiểm tra rỗng và định dạng số, điểm  lớn hơn 0, nhỏ hơn 10)
     isValid &= validation.checkEmpty(
         hoa,
         "spanHoa",
         "Điểm không được để trống"
-      ) && validation.checkEmail(hoa, "spanHoa", "Điểm chưa đúng định dạng");
+      ) && validation.checkScore(hoa, "spanHoa", "Điểm chưa đúng định dạng");
     
       // Khoá học (người dùng có chọn các lựa chọn khác cái đầu tiên không)
       isValid &= validation.checkDropDown("khSV","spanKhoaHoc", "Khoá học chưa được chọn"); 
@@ -240,7 +240,7 @@ function xemChiTiet(ma) {
   }
 }
 
-function capNhatSinhVien(params) {
+function capNhatSinhVien() {
   var maSV = getELE("txtMaSV").value;
   var tenSV = getELE("txtTenSV").value;
   var email = getELE("txtEmail").value;
@@ -281,3 +281,17 @@ function resetForm() {
   // xoá song mã SV vẫn ko sửa được ,nên phải tắt chế độ disbaled
   getELE("txtMaSV").disabled = false;
 }
+
+function timKiemTheoTen() {
+  var tuKhoa = getELE('txtSearch').value;
+  var mangTK = dssv.timKiem(tuKhoa.replaceAll(' ', ''));
+
+  hienThiDS(mangTK);
+}
+
+// tìm kiếm khi click button search
+getELE("btnSearch").onclick = timKiemTheoTen;
+
+// onkeypress(khi đang đè phím), onkeydown (khi mới nhấn phím), onkeyup (bỏ tay rời khỏi phím)
+// => chỉ nên dùng khi dữ liệu tìm kiếm ít, nên dùng với chức năng validation
+getELE('txtSearch').onkeyup = timKiemTheoTen;
