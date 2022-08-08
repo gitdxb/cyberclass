@@ -1,0 +1,23 @@
+// chỉ import đường dẫn tới các file con
+// không điền bất kỳ code css nào
+
+// Helper để phía đầu
+@import "./Helper/variables";
+
+@import "./Helper/mixin";
+
+// Vendors
+// import các file scss
+
+// Base
+@import "./Base/reset";
+@import "./Base/customize";
+
+// Components
+@import "./Component/button";
+
+// Layout
+@import "./Layout/header";
+
+// Pages
+// Themes

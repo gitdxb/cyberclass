@@ -1,0 +1,23 @@
+html, body {
+  font-family: "Nunito Sans", sans-serif;
+  color: #656774;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header .navbar-brand {
+  color: #2a73dd;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+header .nav-item .nav-link {
+  color: #1d365e;
+  font-size: 1.1rem;
+  font-weight: 600;
+}/*# sourceMappingURL=main.css.map */

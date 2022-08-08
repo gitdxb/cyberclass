@@ -1,0 +1,11 @@
+header {
+    .navbar-brand {
+        @include styleText($color-blue-2, $fs-3, $fw-3);
+    }
+
+    .nav-item {
+        .nav-link {
+            @include styleText($color-blue-1, $fs-2, $fw-2);
+        }
+    }
+}
