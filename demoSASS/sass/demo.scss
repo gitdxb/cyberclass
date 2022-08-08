@@ -1,0 +1,81 @@
+// Variable
+// * Uu diem bien cua sass
+// TODO 1. Chay duoc cho tat cac trinh duyet
+// TODO 2. De chinh sua
+$color: red;
+$bg-color: blue;
+
+h1{
+    color: red;
+    background-color: $bg-color;
+}
+
+
+// Nesting
+
+// Ưu điểm: giống cấu trúc thẻ của html => dễ đọc code của thẻ cha và con
+// Lưu ý: không lồng quá nhiều cấp thẻ cha con (nên tối đa cấp thẻ 5)
+.sec1 {
+    p{
+        color: $color;
+    }
+    button{
+        background-color: $bg-color;
+        // * "&" Đại diện cho thẻ cha (button)
+        // &: parent selector
+        &:hover {
+            background-color: greenyellow;
+        }
+    }
+}
+// @extend kế thừa css của class khác
+.sec2{
+    @extend  .sec1;
+    a{
+        color: red;
+    }
+}
+
+// Mixin (gần giống hàm, không có return)
+// 1: không có tham số
+// 2: có tham số
+
+// không có tham số, ít sử dụng vì có extend dễ dùng hơn
+// Khai báo
+@mixin styleSection {
+    p{
+        color: $color;
+    }
+    button{
+        background-color: $bg-color;
+        &:hover {
+            background-color: greenyellow;
+        }
+    }
+}
+// Sử dụng
+.sec3 {
+    @include styleSection();
+}
+
+// Có tham số
+// ? Tạo style cho sec4 + sec5
+// ? cả sec4, sec5 đều cần thêm bg-color, cần color nhưng giá trị màu phải khác nhau
+//? phân tích các thuộc tính chung giữa các section
+//? khai báo tham số cho các thuộc tính cần đổi giá trị
+@mixin newStyleSelection($bg-color, $color) {
+    p{
+        background-color: $bg-color;
+        color: $color;
+    }
+}
+
+// Sử dụng
+.sec4 {
+    @include newStyleSelection(purple, orange);
+}
+.sec5 {
+    @include newStyleSelection(pink, rgb(35, 13, 234));
+}
+
+
