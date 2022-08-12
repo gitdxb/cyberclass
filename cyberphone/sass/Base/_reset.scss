@@ -3,3 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    font-family: 'Nunito', sans-serif;
+    @include styleText($color-dark-1, $fs-1, $fw-1);
+}

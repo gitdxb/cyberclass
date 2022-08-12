@@ -1,0 +1,18 @@
+.btnPhone-outline {
+    // Khai báo biến mới chứa giá trị chưa có
+    // Sử dụng biến có sẵn và tính toán để thay đổi giá trị (nếu độ  chênh lệch giá trị thấp < 5px)
+    @include styleButton(transparent, $bd-2, $bd-1 solid $color-blue-2, $pd-3 + 0.5, $pd-4);
+    @include styleText($color-blue-2, $fs-1, $fw-2);
+    box-shadow: 0 3px 6px $color-blue-3;
+    transition: all .5s;
+
+    &:hover {
+        @include styleButtonHover($color-blue-2, $color-blue-2, $color-white-3);
+    }
+}
+
+.btnPhone-blue {
+    @include styleButton(linear-gradient(120deg, #60a4f4, $color-blue-2), $bd-2, none, $pd-3 + 2.5, $pd-4 +2);
+    @include styleText($color-white-3, $fs-1, $fw-2);
+    transition: all .5s;
+}

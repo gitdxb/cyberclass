@@ -4,7 +4,30 @@
     font-weight: $fw;
 }
 
-html, body {
-    font-family: 'Nunito Sans', sans-serif;
-    @include styleText($color-dark-1, $fs-1, $fw-1);
+
+@mixin styleButton($bg, $radius, $border, $py, $px  ) {
+    background: $bg;
+    border-radius: $radius;
+    border: $border;
+    padding: $py $px;
+}
+
+@mixin styleButtonHover($bg-hover, $bd-hover, $color-hover) {
+    background: $bg-hover;
+    border-color: $bd-hover;
+    color: $color-hover;
+}
+
+// $screen: ten man hinh muon lay kich thuoc
+@mixin responsive($screen){
+    @if (map-has-key($map: $breakpoints, $key: $screen)){
+        // tìm thấy tên màn hình trong danh sách của $breakpoints
+        $value: map-get($map: $breakpoints , $key: $screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Sai ten man hinh";
+    }
 }
