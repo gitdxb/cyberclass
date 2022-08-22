@@ -10,7 +10,7 @@ function showInfo() {
     console.log('var trong hàm ', username);
     console.log('trong hàm ', pass);
 
-    //block{}
+    //? block{}
     if (pass == "12345"){
         // var notify = "đăng nhập thành công";
         let notify = "đăng nhập thành công"; 
@@ -23,7 +23,7 @@ console.log('var ngoài hàm ', username);
 //console.log('ngoài hàm ', pass); // lỗi, k cho
 
 
-/*----------HOSTING------------- */
+/*----------HOISTING------------- */
 
 
 console.log('var', city);

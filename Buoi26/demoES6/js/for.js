@@ -9,15 +9,16 @@ for (let i = 0; i < menu.length; i++) {
 
 // for in
 for (let i in menu) {
-    console.log(menu[i]);
+    console.log(menu[i]); // lấy phần tử giống for truyền thống
 }
 
 /* --------------------------------- for of --------------------------------- */
 // forof
 for (let value of menu){
-    // lấy giá trị dựa vào vị trí phần tử
+    // lấy giá trị dựa vào vị trí phần tử, giống map()
     console.log(value);
 }
+
 let crush = {
     // key: value
     name: "crush1",

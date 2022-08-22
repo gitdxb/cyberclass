@@ -1,6 +1,6 @@
-// Default param
+/* ---------------- // Default param -------------- */
 
-let sum = (num1, num2) => {
+let sum = (num1 = 0, num2 = 0) => {
     console.log(num1 + num2);
 } 
 sum(2,4); //6
@@ -14,7 +14,7 @@ sum();
 //     console.log(haiSan, lau, japan);
 // }
 let showFoodList = (...menuFood) => {
-    console.log(menuFood);
+    console.log(menuFood); // kiểu dữ liệu mảng
     //map(anfn -- callback func)
     menuFood.map((food) => { 
         console.log(food); // từ mảng in ra từng item
@@ -22,12 +22,21 @@ let showFoodList = (...menuFood) => {
 }
 showFoodList("tom", "my", "cua");
 
+/* ---------------- Spead operator --------------- */
+// Tham trị => chỉ truyền giá trị, biến mới có thay đổi thì cũng không ảnh hưởng biến ban đầu
+let petName = "be Na";
 
+let petName2 = petName;
+petName2 = "Na";
+console.log(petName);
+console.log(petName2);
+
+// Tham chiếu => truyền địa chỉ ô nhớ => sửa biến nào cũng ảnh hưởng đến nhau
 
 let pets = ['🍊','🍌'];
 
 // Solution:
-//? Spread operator: lấy từng phần tử từ mảng ra
+//? Spread operator: lấy từng phần tử từ mảng ra, thành từng giá trị đơn lẻ
 // ['🍊','🍌'] = '🍊','🍌'
 // let pet2 = pets;
 // => pet2.push('🍉');
@@ -36,12 +45,12 @@ let pet2 = [...pets,'🍉'];
 console.log(pets);
 console.log(pet2);
 
-/* ------------------------------ Destructuring ----------------------------- */
+/* --------------- Destructuring {},[] -------------- */
 
 let crush = {
     name: "crush1",
     age: 18,
-    avatar: "https://i.pravatar.cc/?u",
+    avatar: "https://i.pravatar.cc/?u=69",
     address:{
         city: "DN",
         houseNum: "103",
@@ -64,4 +73,22 @@ let showInfo = () => {
 }
 showInfo();
 
-/* ----------------------------- Object literal ----------------------------- */
+/* --------------- Object literal ------------- */
+let fullName = "Crush"; // lay tu UI
+let crush2 = {
+    // fullName = fullName, khi tên thuộc tính trùng tên với biến truyền vào
+    fullName,
+    age: 18,
+    avatar: "https://i.pravatar.cc/?u=69",
+}
+console.log(crush2.fullName);
+
+let age = "ageCrush3";
+let crush3 = {
+    // Tạo động tên thuộc tính
+    fullName,
+    [age]: 18,  // ageCrush3: 18;
+    avatar: "https://i.pravatar.cc/?u=69",
+}
+console.log(crush3.ageCrush3);
+
