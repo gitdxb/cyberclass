@@ -20,4 +20,20 @@ export default class FoodService{
             data: food
           });
     }
+
+    getFoodDetail = (id) => {
+        return axios({
+            method: 'get',
+            url:`https://6304b1ba761a3bce77ed8987.mockapi.io/QLNH/${id}`,
+        });
+    }
+
+    updateFood = (id, food) => {
+        return axios({
+            method: 'put',
+            url:`https://6304b1ba761a3bce77ed8987.mockapi.io/QLNH/${id}`,
+            data: food
+        }); 
+    }
 }
+
