@@ -8,7 +8,6 @@ function SanPhamService() {
     var promise = axios({
       method: "get",
       url: "https://62e6a9370e5d74566aeacabb.mockapi.io/api/cc/v1/Products",
-      responseType: "stream",
     });
     return promise;
   };
