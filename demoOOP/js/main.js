@@ -65,14 +65,14 @@ class ChuyenXe{
         this.doanhThu = doanhThu;
     }
 
-    showInfo = () => {
+    showInfo(){
         console.log(this.maXe, this.soXe);
     }
 }
 
 class NoiThanh extends ChuyenXe{
     // phương thức khoẻi tạo của child class
-    // method overriding (ghi đè): phương thức của con trùng tên với cha (class con sẽ ko kế thừa từ cha, class con đè lên cha)
+    //! method overriding (ghi đè): phương thức của con trùng tên với cha (class con sẽ ko kế thừa từ cha, class con đè lên cha)
     constructor(maXe, tenTaiXe, soXe, doanhThu, soTuyen, soKM){
         // super giữ lại các kế thừa từ cha
         super(maXe, tenTaiXe, soXe, doanhThu)
@@ -80,9 +80,12 @@ class NoiThanh extends ChuyenXe{
          this.soTuyen = soTuyen;
          this.soKM = soKM;
      }
-     //method overriding (ghi đè)
+     //method overriding (phương thức ghi đè)
+     //! Đa hình: chung 1 hành động nhưng đạt được kết quả khác nhau
      showInfo = () => {
         console.log(this.maXe, this.tenTaiXe);
+
+        super.showInfo();
         console.log(this.soTuyen, this.soKM);
      }
 }
@@ -94,5 +97,5 @@ class NgoaiThanh extends ChuyenXe{
     
 }
 
-let ngThanh = new NoiThanh("xe004", "Nguyen Van D", "GH004", 5000);
+let ngThanh = new NgoaiThanh("xe004", "Nguyen Van D", "GH004", 5000);
 ngThanh.showInfo();
