@@ -48,7 +48,7 @@ let renderQuestion = () => {
        
         if(index  == quesArray.length-1){
             //nếu câu hỏi là câu cuối cùng
-            buttonHTML = `<a href="#quizResult" class="quiz__btn quiz__next" onclick="">SUBMIT</a>`
+            buttonHTML = `<a href="#quizResult" class="quiz__btn quiz__next" onclick="submitQuestion()">SUBMIT</a>`
         }else{
             //chưa đến câu cuối cùng
             //cần lấy được id của câu hỏi kế tiếp
@@ -77,3 +77,20 @@ let renderQuestion = () => {
     document.getElementById("quizList").innerHTML = contentHTML;
 
 }
+
+let submitQuestion = () => {
+    let correct = 0;
+    quesArray.map((ansObj) => {
+        //ansObj.checkAns() ==  true
+        if(ansObj.checkAns()){
+            // checkAns() => true => ng dùng trả lởi đúng
+            correct++;
+        }
+    })
+    console.log(correct);
+    document.getElementById.apply("correct").innerHTML = correct;
+    document.getElementById.apply("incorrect").innerHTML = quesArray.length - correct;
+    console.log(correct*100/ quesArray.length);
+    
+}
+window.submitQuestion = submitQuestion; // thay cho onclick
